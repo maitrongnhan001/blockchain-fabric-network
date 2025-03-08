@@ -16,11 +16,12 @@ Vagrant.configure("2") do |config|
     # July 2020 - changed to 18.04
     
     # 1. Use this for "Standard setup"
-    config.vm.box = "bento/ubuntu-18.04"
+    config.vm.box = "net9/ubuntu-24.04-arm64"
+    config.vm.box_version = "1.1"
 
     # 2. Use this for "VirtualBox Express Setup"
     # config.vm.box = "acloudfan/hlfdev2.0-0"
-
+    # config.vm.box_version = "1.0"
 
     # Uncomment the lines below if you would like to protect the VM
     # config.ssh.username = 'vagrant'
@@ -66,7 +67,7 @@ Vagrant.configure("2") do |config|
     #   mount --bind  /home/vagrant/app/sdk/node_modules /home/vagrant/app/sdk/vagrant_node_modules
     # SHELL
   
-    # To use a diffrent Hypervisor create a section config.vm.provider
+    # To use a different Hypervisor create a section config.vm.provider
     # And comment out the following section
     # Configuration for Virtual Box
     config.vm.provider :virtualbox do |vb|
@@ -79,14 +80,14 @@ Vagrant.configure("2") do |config|
     end
 
     # Configuration for Windows Hyperv
-    config.vm.provider :hyperv do |hv|
-      # Change the memory here if needed - 2 Gb memory on Virtual Box VM
-      hv.customize ["modifyvm", :id, "--memory", "3072", "--cpus", "1"]
-      # Change this only if you need destop for Ubuntu - you will need more memory
-      hv.gui = false
-      # In case you have DNS issues
-      # vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-    end
+    # config.vm.provider :hyperv do |hv|
+    #   # Change the memory here if needed - 2 Gb memory on Virtual Box VM
+    #   hv.customize ["modifyvm", :id, "--memory", "3072", "--cpus", "1"]
+    #   # Change this only if you need destop for Ubuntu - you will need more memory
+    #   hv.gui = false
+    #   # In case you have DNS issues
+    #   # vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    # end
 
 
   end

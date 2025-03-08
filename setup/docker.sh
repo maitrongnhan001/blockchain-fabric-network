@@ -17,7 +17,7 @@ install_docker() {
     apt-key fingerprint 0EBFCD88
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
     apt-get update
-    apt-get install -y "docker-ce=${DOCKER_VERSION}.*"
+    apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
     # apt-get install -y "docker-ce"
     docker info
     # usermod -aG docker vagrant
@@ -35,7 +35,7 @@ systemctl daemon-reload
 systemctl restart docker
 
 # Installing docker compose
-./compose.sh
+sudo ./compose.sh
 
 echo "======= Done. PLEASE LOG OUT & LOG Back In ===="
 echo "Then validate by executing    'docker info'   "
