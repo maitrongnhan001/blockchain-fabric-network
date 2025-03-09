@@ -24,8 +24,8 @@ Vagrant.configure("2") do |config|
     # config.vm.box_version = "1.0"
 
     # Uncomment the lines below if you would like to protect the VM
-    # config.ssh.username = 'vagrant'
-    # config.ssh.password = 'vagrant'
+    config.ssh.username = 'vagrant'
+    config.ssh.password = 'vagrant'
     # config.ssh.insert_key = 'true'
 
 

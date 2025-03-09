@@ -34,6 +34,7 @@ then
 
     echo "export GOROOT=/usr/local/go" >> ~/.bashrc
     echo "export GOPATH=$GOPATH" >> ~/.bashrc
+    echo "export PATH=$PATH:/usr/local/go/bin"
     echo "======== Updated .profile with GOROOT/GOPATH/PATH===="
 
     # UPDATED Dec 15, 2019
